@@ -6,8 +6,12 @@ public class Test
 {
 	public static void main(String[] args)
 	{
+		ReadInput.getCarportDimensions();
 		JavaCSG csg = JavaCSGFactory.createDefault();
-
-		//csg.view();
+		Material post = new Post(10, 10, 100);
+		Material rafter = new Rafter(10, 10, 100);
+		Material purlin = new Purlin(10, 10, 100);
+		csg.view(post.create(csg), 1);
+		csg.view(post.create(csg), 2);
 	}
 }
