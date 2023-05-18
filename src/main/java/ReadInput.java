@@ -13,17 +13,17 @@ public class ReadInput {
         double length = 0;
 
         do {
-            displayMessage("Please fill out following dimensions of your carport:");
-            width = getDoubleInput("Width: ");
-            height = getDoubleInput("Height: ");
-            length = getDoubleInput("Length: ");
+            displayMessage("Venligst indtast målene på din carport (mm):");
+            width = getDoubleInput("Bredde: ");
+            height = getDoubleInput("Højde: ");
+            length = getDoubleInput("Længde: ");
         } while (width <= 0 || height <= 0 || length <= 0);
 
         clearConsole();
-        displayMessage("You have chosen the following dimensions:\n" +
-                "\nWidth: " + width +
-                "\nHeight: " + height +
-                "\nLength: " + length + "\n");
+        displayMessage("Du har valgt følgende dimensioner:\n" +
+                "\nBredde: " + width +
+                "\nHøjde: " + height +
+                "\nLængde: " + length + "\n");
         dimensions.add(width);
         dimensions.add(height);
         dimensions.add(length);
@@ -42,11 +42,11 @@ public class ReadInput {
             try {
                 double input = Double.parseDouble(scn.next());
                 if (input <= 0){
-                    throw  new InputMismatchException("Please enter a positive number.");
+                    throw  new InputMismatchException("Venligst indtast et positivt tal.");
                 }
                 return input;
             } catch (NumberFormatException NFE) {
-                displayMessage("Please enter a valid number.");
+                displayMessage("Venligst indtast et gyldigt tal.");
             } catch (InputMismatchException IME){
                 displayMessage(IME.getMessage());
             }

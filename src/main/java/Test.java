@@ -16,6 +16,6 @@ public class Test
 		csg.view(post.create(csg), 0);
 		csg.view(rafter.create(csg), 1);
 		csg.view(purlin.create(csg), 2);
-		Guide.walkthrough();
+		Guide.walkthrough((int) (materials.get(2)/25));
 	}
 }
