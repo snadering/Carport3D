@@ -19,10 +19,11 @@ public class ReadInput {
             length = getDoubleInput("Length: ");
         } while (width <= 0 || height <= 0 || length <= 0);
 
-        displayMessage("You have chosen the following dimensions:" +
+        clearConsole();
+        displayMessage("You have chosen the following dimensions:\n" +
                 "\nWidth: " + width +
                 "\nHeight: " + height +
-                "\nLength: " + length);
+                "\nLength: " + length + "\n");
         dimensions.add(width);
         dimensions.add(height);
         dimensions.add(length);
@@ -50,5 +51,12 @@ public class ReadInput {
                 displayMessage(IME.getMessage());
             }
         }
+    }
+
+    public static void clearConsole(){
+        for (int i = 0; i < 20; i++){
+            System.out.println(" ");
+        }
+
     }
 }
