@@ -8,9 +8,12 @@ public class Post extends Material{
 
     @Override
     public Geometry3D create(JavaCSG csg) {
+        var post = csg.box3D(getLength(), getHeight(), getWidth(), false);
+        var cut = csg.box3D(11, 6, getWidth()+2, false);
+        cut = csg.translate3D(getLength()/2-5, 0, -1).transform(cut);
 
 
-        return csg.box3D(getLength(), getHeight(), getWidth(), false);
+        return csg.difference3D(post, cut);
     }
 
 

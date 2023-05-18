@@ -8,6 +8,6 @@ public class Rafter extends Material{
 
     @Override
     public Geometry3D create(JavaCSG csg) {
-        return null;
+        return csg.box3D(getWidth(), getLength(), getHeight(), false);
     }
 }
